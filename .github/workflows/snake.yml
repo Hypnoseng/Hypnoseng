@@ -1,28 +1,29 @@
+
 name: Generate Snake
 
 on:
-  # สั่งให้ทำงานอัตโนมัติทุกๆ 24 ชั่วโมง
+  # ทำงานอัตโนมัติทุก 24 ชั่วโมง
   schedule:
     - cron: "0 0 * * *"
-  
-  # ยินยอมให้กดสั่งรันระบบเองมือได้ด้วย
+
+  # สั่งรันเองได้
   workflow_dispatch:
-  
-  # สั่งให้ทำงานทุกครั้งที่มีการอัปเดตโค้ดในหน้าโปรไฟล์
+
+  # ทำงานเมื่อมีการ Push ไปยัง main
   push:
     branches:
-    - main
+      - main
 
 jobs:
   generate:
-    permissions: 
+    permissions:
       contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    
+
     steps:
-      # 1. ดึงโค้ดจากเครื่องมือของเจ้าของตัวจริง (Platane/snk) เพื่อสร้างแอนิเมชันงู
-      - name: generate-github-contribution-grid-snake
+      # 1. สร้าง SVG แอนิเมชันงู
+      - name: Generate GitHub Contribution Snake
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: Hypnoseng
@@ -30,8 +31,14 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # 2. นำไฟล์รูปงูที่ได้ อัปโหลดขึ้นไปเก็บไว้ในคลังของเรา (ใน Branch ชื่อ output)
-      - name: push github-contribution-grid-snake to the output branch
+      # 2. ปรับความเร็วทั้งสองธีมก่อนอัปโหลด
+      - name: Set snake animation speed
+        run: |
+          sed -i 's/13500ms/4500ms/g' dist/github-contribution-grid-snake.svg
+          sed -i 's/13500ms/4500ms/g' dist/github-contribution-grid-snake-dark.svg
+
+      # 3. Push ไฟล์ที่แก้แล้วไปยัง output branch
+      - name: Push Snake to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
