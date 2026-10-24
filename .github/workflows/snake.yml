@@ -31,11 +31,11 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # 2. ปรับความเร็วทั้งสองธีมก่อนอัปโหลด
+       # 2. ปรับความเร็วทั้งสองธีมก่อนอัปโหลด
       - name: Set snake animation speed
         run: |
-          sed -i 's/13500ms/4500ms/g' dist/github-contribution-grid-snake.svg
-          sed -i 's/13500ms/4500ms/g' dist/github-contribution-grid-snake-dark.svg
+          sed -i 's/14500ms/4500ms/g; s/13500ms/4500ms/g' dist/github-contribution-grid-snake.svg
+          sed -i 's/14500ms/4500ms/g; s/13500ms/4500ms/g' dist/github-contribution-grid-snake-dark.svg
 
       # 3. Push ไฟล์ที่แก้แล้วไปยัง output branch
       - name: Push Snake to output branch
