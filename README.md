@@ -1,6 +1,11 @@
-## 💻 Most Used Languages
-
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Hypnoseng&layout=compact&langs_count=8&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
+<div align="right">
+  <p>
+    <img
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hypnoseng&layout=compact&langs_count=8&theme=tokyonight"
+      alt="Hypnoseng Top Languages"
+    />
+  </p>
+</div>
 
 ## 🟩 Platane Snake Game
 
