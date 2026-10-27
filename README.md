@@ -1,11 +1,13 @@
+
 <div align="right">
   <p>
     <img
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hypnoseng&layout=compact&langs_count=8&theme=tokyonight"
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hypnoseng&layout=compact&langs_count=8"
       alt="Hypnoseng Top Languages"
     />
   </p>
 </div>
+
 
 ## 🟩 Platane Snake Game
 
