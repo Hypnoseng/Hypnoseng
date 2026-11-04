@@ -1,10 +1,12 @@
 
 <div align="right">
   <p>
-    <img
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hypnoseng&layout=compact&langs_count=8"
-      alt="Hypnoseng Top Languages"
-    />
+    <a href="https://github.com/Hypnoseng">
+      <img
+        src="https://github-stats-extended.vercel.app/api/top-langs/?username=Hypnoseng&layout=compact&langs_count=8"
+        alt="Hypnoseng Top Languages"
+      />
+    </a>
   </p>
 </div>
 
